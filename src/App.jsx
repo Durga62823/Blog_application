@@ -6,9 +6,9 @@ import Homepage from './components/homepage'
 function App() {
 
   return (
-    <>
+    <div className='app font-opensans'>
       <Homepage></Homepage>
-    </>
+    </div>
   )
 }
 
