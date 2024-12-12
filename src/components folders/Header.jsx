@@ -1,6 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { IoMdMenu, IoMdClose } from "react-icons/io";
+import { Button } from "@/components/ui/button"
 function Header() {
+    const [darkMode, setDarkMode] = useState(false);
+
+    useEffect(() => {
+      if (darkMode) {
+        document.documentElement.classList.add("dark"); // Adds the 'dark' class
+      } else {
+        document.documentElement.classList.remove("dark"); // Removes the 'dark' class
+      }
+    }, [darkMode]);
     const [navIsVisible, setnavIsVisible] = useState(false);
     const navVisibilityHandler = () => {
         setnavIsVisible((pre) => {
@@ -58,6 +68,13 @@ function Header() {
                         <button className="border-2 border-green-600 px-6  py-2 rounded-full text-white md:text-blue-500 hover:bg-green-500 hover:text-black text-sm sm:text-base">
                             Sign in
                         </button>
+                        <Button
+        className="p-2 mt-4 bg-gray-200 text-white rounded-full dark:bg-gray-800"
+        onClick={() => setDarkMode(!darkMode)}
+      >
+        Dark
+      </Button>
+                        
                     </nav>
                 </div>
             </header>
