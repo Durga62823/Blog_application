@@ -11,11 +11,7 @@ export default {
                     DEFAULT: 'hsl(var(--primary))',
                     foreground: 'hsl(var(--primary-foreground))'
                 },
-                dark: {
-                    hard: '#0D2436',
-                    soft: '#183B56',
-                    light: '#5A7184'
-                },
+              
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
                 card: {
@@ -63,12 +59,17 @@ export default {
                     'sans-serif'
                 ]
             },
-            borderRadius: {
-                lg: 'var(--radius)',
-                md: 'calc(var(--radius) - 2px)',
-                sm: 'calc(var(--radius) - 4px)'
-            }
+         
         }
     },
+    screens: {
+        'tablet': '640px',
+     
+  
+        'laptop': '1024px',
+  
+        'desktop': '1280px',
+ 
+      },
     plugins: [require("tailwindcss-animate")],
 }
